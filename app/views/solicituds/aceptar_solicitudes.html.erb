@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrador: Solicitudes</title>
+  <link rel="stylesheet" href="aceptar_solicitudes.css">
+</head>
+<body>
+  <header>
+    <div class="aceptar-solicitudes-heading">ADMINISTRAR SOLICITUDES</div>
+  </header>
+  <div class="aceptar-solicitudes-container">
+    <div class="aceptar-solicitudes-header">
+      <div class="aceptar-solicitudes-detail">USUARIO</div>
+      <div class="aceptar-solicitudes-detail">ACTIVIDAD</div>
+      <div class="aceptar-solicitudes-detail">FECHA</div>
+      <div class="aceptar-solicitudes-detail">DESCRIPCIÓN</div>
+      <div class="aceptar-solicitudes-detail">ESTADO</div>
+      <div class="aceptar-solicitudes-detail"></div>
+      <div class="aceptar-solicitudes-detail"></div>
+    </div>
+    <% Solicitud.all.each do |solicitud| %>
+      <%if solicitud.actividad_id == @actividad_id && solicitud.estado == false %>
+        <div class="aceptar-solicitudes-item">
+          <div class="aceptar-solicitudes-detail"><%= User.find(solicitud.user_id).email %></div>
+          <div class="aceptar-solicitudes-detail"><%= Actividad.find(solicitud.actividad_id).titulo %></div>
+          <div class="aceptar-solicitudes-detail"><%= solicitud.created_at.strftime("%d/%m/%y") %></div>
+          <div class="aceptar-solicitudes-detail"><%= solicitud.descripcion %></div>
+          <div class="aceptar-solicitudes-detail">
+          <% if solicitud.estado %>
+              <%= "Aceptada" %>
+            <% else %>
+              <%= "Pendiente" %>
+            <% end %>
+            </div>
+          <div class="aceptar-solicitudes-detail">
+            <%= button_to "Aceptar Solicitud", aceptar_path(solicitud.id), class: "aceptar-solicitudes-button" %>
+          </div>
+          <div class="aceptar-solicitudes-detail">
+            <%= button_to "Eliminar Solicitud", eliminar_solicitud_externa_path(solicitud.id), class: "aceptar-solicitudes-eliminar-button" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="signin.css">
+</head>
+<body class="body_signin">
+
+<div class="signin-container">
+  <h3 style="font-size: 3rem; font-weight: 2000; color: #4d774e;">REGISTRARSE </h3>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="signin-field">
+      <%= f.label :email, "Mail" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "signin-input" %>
+    </div>
+
+    <div class="signin-field">
+      <%= f.label :password, "Contraseña" %>
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> caracteres como mínimo)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class: "signin-input" %>
+    </div>
+
+    <div class="signin-field">
+      <%= f.label :password_confirmation, "Confirmar contraseña" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "signin-input" %>
+    </div>
+
+    <div class="signin-field">
+      <%= f.label :name, "Nombre" %><br />
+      <%= f.text_field :name, class: "signin-input" %>
+    </div>
+
+    <div class="signin-field">
+      <%= f.label :descripcion, "Descripción" %><br />
+      <%= f.text_field :descripcion, class: "signin-input" %>
+    </div>
+
+    <div class="signin-field">
+      <%= f.label :phone, "Número" %><br />
+      <%= f.text_field :phone, class: "signin-input" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "REGISTRARSE", class: "signin-button" %>
+    </div>
+  <% end %>
+
+  <div class="signin-links">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
+
+</body>
+</html>

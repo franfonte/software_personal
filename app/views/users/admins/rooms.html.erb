@@ -1,0 +1,18 @@
+<body>
+  <h1>admin rooms: Chats</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre Chat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Room.all.each do |room| %>
+        <tr>
+          <td><%= room.name %></td>
+          <td><%= button_to "Eliminar Chat", room_path(room.id), method: :delete%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</body>

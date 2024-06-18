@@ -1,0 +1,95 @@
+/* solicitudes.css */
+
+.solicitudes-body {
+    font-family: "Francois One", sans-serif;
+    background-color: #4d774e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+h7 {
+    font-family: "Francois One", sans-serif;
+    color: #fff;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.solicitudes-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.solicitudes-header, .solicitud-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+.solicitudes-header {
+    font-weight: bold;
+    background-color: #164a41;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    display: flex;
+    align-items: center; /* Asegura el centrado vertical */
+}
+
+.solicitudes-header .solicitud-detail {
+    flex: 1;
+    padding: 10px;
+    text-align: center; /* Centra el texto horizontalmente */
+    border-right: 1px solid #ddd;
+}
+
+.solicitud-item {
+    border-left: 4px solid #164a41;
+    display: flex;
+    align-items: center; /* Asegura el centrado vertical */
+}
+
+.solicitud-item .solicitud-detail {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.solicitud-item .solicitud-detail:last-child {
+    border-right: none;
+}
+
+.solicitud-item .solicitud-detail:hover {
+    overflow: auto;
+    white-space: normal;
+}
+
+.solicitud-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Francois One", sans-serif;
+    font-size: 1rem;
+}
+
+
+.solicitud-button:hover {
+    background-color: #e53935;
+}

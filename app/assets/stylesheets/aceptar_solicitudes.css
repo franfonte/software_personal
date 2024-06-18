@@ -1,0 +1,101 @@
+/* admin_solicitudes.css */
+
+.aceptar-solicitudes-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 70px; /* Ajusta el margen superior */
+    font-family: "Francois One", sans-serif;
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+.aceptar-solicitudes-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+.aceptar-solicitudes-header, .aceptar-solicitudes-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.aceptar-solicitudes-header {
+    font-weight: bold;
+    background-color: #164a41;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.aceptar-solicitudes-header .aceptar-solicitudes-detail {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+}
+
+.aceptar-solicitudes-item {
+    border-left: 4px solid #164a41;
+    display: flex;
+    align-items: center;
+}
+
+.aceptar-solicitudes-item .aceptar-solicitudes-detail {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.aceptar-solicitudes-item .aceptar-solicitudes-detail:last-child {
+    border-right: none;
+}
+
+.aceptar-solicitudes-item .aceptar-solicitudes-detail:hover {
+    overflow: auto;
+    white-space: normal;
+}
+
+.aceptar-solicitudes-eliminar-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Francois One", sans-serif;
+    font-size: 1rem;
+}
+
+.aceptar-solicitudes-eliminar-button:hover {
+    background-color: #e53935;
+}
+
+.aceptar-solicitudes-button {
+    background-color: #f1b24a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Francois One", sans-serif;
+    font-size: 1rem;
+}
+
+.aceptar-solicitudes-button:hover {
+    background-color: #d99b3a;
+}

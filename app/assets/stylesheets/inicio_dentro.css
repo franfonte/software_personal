@@ -1,0 +1,103 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c8c9bb; /* Color de fondo */
+}
+
+.background-image {
+    background-image: url('portada.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Para que la imagen de fondo permanezca fija */
+    position: relative;
+    opacity: 0.8; /* Opacidad para hacer la imagen semi-transparente */
+    height: 100vh; /* Ajusta según tus necesidades */
+}
+
+.main-section-id {
+    background-color: rgba(77, 119, 78, 0.2); /* Color de fondo semi-transparente */
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Centra exactamente */
+    max-width: 800px; /* Ajusta el ancho máximo del contenido según sea necesario */
+}
+
+.main-section-id h1 {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.main-section-id p {
+    font-size: 1rem;
+  margin-bottom: 2rem;
+  font-family: "Francois One", sans-serif;
+}
+
+.main-section-id j {
+    font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-family: "Francois One", sans-serif;
+}
+
+inicio.html.erb
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="inicio_dentro.css"> <!-- Enlace al CSS externo -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-section-id {
+            background-color: #4d774e; /* Color de fondo */
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+            height: 100vh; /* Ajusta según tus necesidades */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            max-width: 800px; /* Ajusta el ancho máximo del contenido según sea necesario */
+            margin: 0 auto; /* Centra el contenido horizontalmente */
+        }
+
+        .content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .content p {
+            text-align: justify; /* Justifica el texto */
+            font-size: 1.2rem;
+            margin-bottom: 2rem; /* Ajusta el espacio inferior entre párrafos */
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image">
+        <section class="main-section-id">
+            <div class="content">
+                <h1 class="title">Groups & Groups</h1>
+                <p>Groups & Groups es una plataforma dedicada a conectar personas a través de intereses comunes. Aquí puedes explorar una amplia variedad de grupos, desde deportes y hobbies hasta actividades culturales y más. Únete a grupos existentes para conocer personas con pasiones similares, o crea tu propio grupo para reunir a otros con tus mismos intereses. Además de interactuar y compartir experiencias con miembros de la comunidad, podrás participar en conversaciones, eventos y actividades exclusivas organizadas por los grupos.</p>
+                <j>¡DESCUBRE TODO LO QUE NUESTRA COMUNIDAD TIENE PARA OFRECER Y ÚNETE HOY MISMO PARA EMPEZAR A CONECTAR Y EXPLORAR!</j>
+        </section>
+    </div>
+</body>
+</html>

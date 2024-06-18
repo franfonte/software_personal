@@ -1,0 +1,26 @@
+databases:
+  - name: 2024-1-grupo-09
+    databaseName: mysite
+    user: mysite
+    plan: free
+
+services:
+
+  - type: web
+    name: mysite
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec rails server"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mysite
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2
+
+  - type: redis # Nuevo
+    name: grupo9_redis

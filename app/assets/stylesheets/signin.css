@@ -1,0 +1,79 @@
+/* signin.css */
+
+.body_signin {
+  font-family: "Francois One", sans-serif;
+  background-color: #4d774e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.signin-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  overflow-y: auto;
+  max-height: 80vh;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.signin-container h2 {
+  margin-bottom: 1rem;
+  color: #4d774e;
+}
+
+.signin-field {
+  margin-bottom: 1rem;
+}
+
+.signin-input {
+  width: calc(100% - 16px); /* Ajuste para compensar el padding y el borde */
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.signin-checkbox {
+  margin-right: 0.5rem;
+}
+
+.actions {
+  margin-top: 0.5rem;
+}
+
+.signin-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #f1b24a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.signin-button:hover {
+  background-color: #f6ab33;
+}
+
+.signin-links {
+  margin-top: 1rem;
+}
+
+.signin-links a {
+  color: #4d774e;
+  text-decoration: none;
+}
+
+.signin-links a:hover {
+  text-decoration: underline;
+}

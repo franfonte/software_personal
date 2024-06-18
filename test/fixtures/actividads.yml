@@ -1,0 +1,28 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one: 
+  user: one
+  titulo: MyString
+  descripcion: MyText
+  fecha: <%= DateTime.now %>
+  valor: 1
+  calificacion_promedio: 4
+  publica: true
+
+two:
+  user: two
+  titulo: MyString
+  descripcion: MyText
+  fecha: <%= DateTime.now +2 %>
+  valor: 1
+  calificacion_promedio: 2
+  publica: true
+
+three: 
+  user: three
+  titulo: actividad
+  fecha: <%= DateTime.now %>
+  valor: 5000
+  descripcion: Describir actividad
+  calificacion_promedio: 1
+  publica: false

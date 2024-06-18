@@ -1,0 +1,38 @@
+<style>
+.nav-image {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%; 
+}
+</style>
+
+
+<nav class="navbar">
+  <ul class="navbar-nav">
+
+  <% if current_user.admin %>
+  <li class="dropdown">
+    <%= link_to "Controles Administrador:", inicio_path %>
+    <ul class="submenu">
+      <li><%= link_to "Usuarios", admin_usuarios_path %></li>
+      <li><%= link_to "Actividades", admin_actividades_path %></li>
+      <li><%= link_to "Solicitudes", admin_solicitudes_path %></li>
+      <li><%= link_to "Reseñas", admin_resenas_path %></li>
+    </ul>
+      <li><%= "|" %></li>
+  </li>
+  <% end %>
+
+    <li><%= button_to "SALIR", destroy_user_session_path, method: :delete, style: "background-color: transparent; /* White */ border: none; color: White; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-family: 'Francois One', sans-serif; font-size: 16px; margin: 0px 0px; cursor: pointer;" %></li>
+    <li><%= link_to "EDIT", edit_user_registration_path %></li>
+    <li><%= link_to "INICIO", inicio_path %></li>
+    <li><%= link_to "USUARIO: "+current_user.name, mi_perfil_path %></li>
+    <li><%= link_to "MIS ACTIVIDADES", mis_actividades_path %></li>
+    <li><%= link_to "EXPLORAR", actividads_path %></li>
+    <li><%= link_to "ESTADO SOLICITUDES", solicituds_path %></li>
+    <li><%= link_to "CREAR ACTIVIDAD", new_actividad_path %></li>
+    <li><%= link_to "SUSCRIPCIONES", index_suscrito_path %></li>
+
+  </ul>
+</nav>

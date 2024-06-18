@@ -1,0 +1,59 @@
+<div>
+    <% if @single_room %>
+      <div id="single_room">
+        <p><%= @single_room.name %></p>
+        <%= turbo_stream_from @single_room %>
+        <div id="messages">
+          <%= render @messages %>
+        </div>
+        <%= render 'layouts/new_message_form' %>
+      </div> 
+    <% end %>
+</div>
+
+<style>
+
+  .msg-form {
+    margin-top: 10px;
+    width: 100%;
+    height: 56px;
+  }
+  
+  #single_room {
+    height: calc(100vh - 150px);
+    width: 70%;
+    margin: 0 auto;
+  }
+  
+  #messages {
+    height: calc(75vh - 150px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  #room_container {
+    height: 100vh;
+    margin-right: 0px !important;
+  }
+  
+  .msg-content {
+    width: 80%;
+    margin-right: 5px;
+  }
+  .message-box {
+    word-wrap: break-word;
+    width: fit-content;
+    max-width: 40%;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: #c8c9bb;
+    padding: 10px;
+  }
+
+  /* Tutorial */
+
+  </style>

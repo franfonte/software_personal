@@ -1,0 +1,110 @@
+/* admin_actividades.css */
+.administrador-actividades-body {
+    font-family: "Francois One", sans-serif;
+    background-color: #4d774e;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll; /* Agrega scroll vertical si es necesario */
+}
+
+.administrador-actividades-body h1 {
+    font-size: 3rem;
+    margin-top: 70px;
+    
+}
+
+.administrador-actividades-body p {
+    font-size: 1rem;
+    font-weight: lighter;
+    color: #000;
+    margin-top: 0;
+}
+
+.administrador-actividades-body h3 {
+    font-size: 1.5rem;
+    background-color: #4d774e;
+    color: white;
+    margin: 5px -5px 5px -5px;
+    text-align: center;
+    padding:5px;
+    border-radius: 12px; /* Añade esquinas redondeadas */
+}
+.administrador-actividades-body h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    background-color: #164a41;
+    color: #fff;
+    padding:5px;
+    margin: 5px -5px 5px -5px;
+    border-radius: 12px; /* Añade esquinas redondeadas */
+}
+
+/* Contenedor de actividades */
+.administrador-actividades-container {
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribuye las actividades equitativamente */
+    gap: 10px; /* Espacio entre actividades */
+    margin-top: 20px; /* Aumenta el margen superior */
+    overflow-x: auto; /* Desplazamiento horizontal si es necesario */
+}
+
+/* Estilo para cada actividad */
+.administrador-actividades-item {
+    width: calc(33.33% - 20px); /* Calcula el ancho de cada actividad */
+    max-width: 400px; /* Ancho mínimo para asegurar 3 actividades por fila */
+    height: 500px; /* Altura fija de cada actividad */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Espacio entre filas */
+    overflow: auto; /* Desplazamiento vertical si es necesario */
+    color: #000; /* Color del texto dentro del contenedor */
+}
+
+/* Título de las actividades */
+.administrador-actividades-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 20px; /* Ajusta el margen superior */
+    font-family: "Francois One", sans-serif;
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+/* Estilo para enlaces */
+.administrador-actividades-link {
+    text-decoration: none;
+    color: #4d774e;
+    font-weight: bold;
+}
+
+.administrador-actividades-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Estilo para botones */
+.administrador-actividades-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Francois One", sans-serif;
+    font-size: 1rem;
+}
+
+.administrador-actividades-button:hover {
+    background-color: #e53935;
+}
+
+

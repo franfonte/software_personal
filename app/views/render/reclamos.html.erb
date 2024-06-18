@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Reclamo</title>
+  <link rel="stylesheet" href="reclamos.css">
+</head>
+<body class="reclamos-body">
+
+<div class="container reclamos-conteiner">
+  <h3 style= "text-align:center;">POR FAVOR, DEJA TU RECLAMO AQUÍ</h3>
+
+  <%= form_with url: crear_reclamo_path, method: :get do |form| %>
+    <%= form.label :tipo_de_reclamo %>
+    <%= form.select :tipo_de_reclamo, [['Funcionalidad'], ['Sugerencia'], ['Falla'], ['Problema'], ['Usuario']] %>
+    <%= form.text_area :descripcion, style: "width: 100%; height: 200px;", placeholder: "Escribe aquí tu reclamo..." %>
+  <div class="actions">
+    <%= form.submit "CREAR RECLAMO" %>
+  </div>
+
+  <% end %>
+</div>
+
+</body>
+</html>
+

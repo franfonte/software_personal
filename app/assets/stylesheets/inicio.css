@@ -1,0 +1,111 @@
+/* Estilos generales */
+body {
+  font-family: "Francois One", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #c8c9bb; /* Color de fondo */
+  overflow-x: hidden; /* Evita la barra de desplazamiento horizontal */
+}
+
+.contact_navbar {
+  background-color: #164a41;
+  color: #fff;
+  text-align: left;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Asegura que el navbar esté por encima de otros elementos */
+}
+
+.contact_navbar p {
+  margin: 0; /* Elimina el margen superior e inferior del párrafo */
+  margin-right: 10px; /* Espacio entre el texto "Contacto:" y los enlaces */
+  font-family: "Francois One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.contact_navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px; /* Espacio entre los enlaces */
+  font-family: "Oswald", sans-serif;
+}
+
+.contact_navbar a:hover {
+  text-decoration: underline;
+}
+
+.main-section {
+  background-color: rgba(77, 119, 78, 0.7); /* Fondo semi-transparente */
+  color: #fff;
+  text-align: center;
+  padding: 5px 20px;
+  height: calc(100vh - 100px); /* Altura menos la altura del navbar */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinea el contenido al inicio */
+  align-items: center;
+  position: relative; /* Relativo para permitir superposiciones */
+  z-index: 1; /* Capa z-index superior para asegurar que el contenido esté sobre la imagen de fondo */
+  margin-top: 100px; /* Margen superior de 100px */
+}
+
+.main-section .content {
+  max-width: 800px; /* Ajusta el ancho máximo del contenido según sea necesario */
+  font-family: "Francois One", sans-serif;
+}
+
+.main-section h1 {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.main-section p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-family: "Francois One", sans-serif;
+}
+
+.main-section j {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-family: "Francois One", sans-serif;
+}
+
+.i_button {
+  display: inline-block;
+  padding: 15px 100px;
+  background-color: #f1b24a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 0 10px;
+  font-family: "Francois One", sans-serif;
+  font-weight: 400;
+  margin-top: 60px;
+  font-size: 1.2rem;
+}
+
+.i_button:hover {
+  background-color: #f9c54c; /* Cambia el color de fondo al pasar el cursor */
+}
+
+.ibackground-image {
+  position: fixed; /* Fija la imagen de fondo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Capa z-index más baja para asegurar que esté detrás de todo el contenido */
+  background-image: url('Foto_portada.png'); /* Ruta de la imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5; /* Opacidad de la imagen de fondo */
+}
+
+

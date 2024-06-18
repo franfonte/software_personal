@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrador: Usuarios</title>
+  <link rel="stylesheet" href="admin_usuarios.css">
+</head>
+<body>
+  <header>
+    <div class="administrador-usuario-heading">ADMINISTRAR USUARIOS</div>
+  </header>
+  <div class="administrador-usuario-container">
+    <div class="administrador-usuario-header">
+      <div class="administrador-usuario-detail">MAIL</div>
+      <div class="administrador-usuario-detail">NOMBRE</div>
+      <div class="administrador-usuario-detail">TELÉFONO</div>
+      <div class="administrador-usuario-detail">DESCRIPCIÓN</div>
+      <div class="administrador-usuario-detail">PERMISOS</div>
+      <div class="administrador-usuario-detail">ACCIONES</div>
+    </div>
+    <% User.all.each do |user| %>
+      <% if user.id != current_user.id %>
+        <div class="administrador-usuario-item">
+          <div class="administrador-usuario-detail"><%= user.email %></div>
+          <div class="administrador-usuario-detail"><%= user.name %></div>
+          <div class="administrador-usuario-detail"><%= user.phone %></div>
+          <div class="administrador-usuario-detail"><%= user.descripcion %></div>
+          <div class="administrador-usuario-detail">
+            <% if user.admin %>
+              <%= button_to "Administrador", admin_path(user.id), method: :get %>
+            <% else %>
+              <%= button_to "Usuario", admin_path(user.id), method: :get %>
+            <% end %>
+          </div>
+          <div class="administrador-usuario-detail">
+            <%= button_to "Eliminar", admin_eliminar_usuario_path(user.id), method: :delete, class: "administrador-usuario-button" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</body>
+</html>

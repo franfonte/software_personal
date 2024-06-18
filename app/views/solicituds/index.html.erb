@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Solicitudes</title>
+  <link rel="stylesheet" href="solicitudes.css">
+</head>
+<body class="solicitudes-body">
+  <h7 style="font-size: 3rem; font-weight: bold; color: #fff;">MIS SOLICITUDES A ACTIVIDADES</h7>
+  <div class="solicitudes-container">
+    <div class="solicitudes-header">
+      <div class="solicitud-detail">ACTIVIDAD</div>
+      <div class="solicitud-detail">DESCRIPCIÓN</div>
+      <div class="solicitud-detail">CREACIÓN</div>
+      <div class="solicitud-detail">ÚLTIMA ACTUALIZACIÓN</div>
+      <div class="solicitud-detail">ESTADO</div>
+      <div class="solicitud-detail">ELIMINAR LA SOLICITUD</div>
+    </div>
+    <% Solicitud.order(:estado).all.each do |solicitudes| %>
+      <% if solicitudes.user_id == current_user.id %>
+        <div class="solicitud-item">
+          <div class="solicitud-detail"><%= Actividad.find(solicitudes.actividad_id).titulo %></div>
+          <div class="solicitud-detail"><%= solicitudes.descripcion %></div>
+          <div class="solicitud-detail"><%= solicitudes.created_at.strftime("%d/%m/%y") %></div>
+          <div class="solicitud-detail"><%= solicitudes.updated_at.strftime("%d/%m/%y") %></div>
+          <div class="solicitud-detail"><%= solicitudes.estado ? "Aceptada" : "No Aceptada" %></div>
+          <div class="solicitud-detail"><%= button_to "ELIMINAR", solicitud_path(solicitudes.id), method: :delete, class: "solicitud-button" %></div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</body>
+</html>

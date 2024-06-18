@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reseñas de Actividad</title>
+  <link rel="stylesheet" href="reseñas.css"> <!-- Estilos específicos para reseñas -->
+</head>
+<body class="reseñas-body">
+  <r class="reseñas-heading">RESEÑAS DE ACTIVIDAD: <%= Actividad.find(@actividad_id).titulo %> </r>
+  <div class="reseñas-grid">
+    <% Resena.all.each do |res| %>
+      <% if res.actividad_id == @actividad_id %>
+        <div class="reseñas-card">
+          <div class="reseñas-details">
+            <div class="reseñas-detail">
+              <t class="reseñas-detail-label">CALIFICACIÓN:</t>
+              <p class="reseñas-detail-value"><%= res.calificacion %></p>
+            </div>
+            <div class="reseñas-detail">
+              <t class="reseñas-detail-label">CREADA POR:</t>
+              <p class="reseñas-detail-value"><%= User.find(res.user_id).name %></p>
+            </div>
+            <div class="reseñas-detail">
+              <t class="reseñas-detail-label">FECHA CREACIÓN:</t>
+              <p class="reseñas-detail-value"><%= res.fecha.strftime("%d/%m/%Y") %></p>
+            </div>
+          </div>
+          <div class="reseñas-contenido">
+            <t><%= "CONTENIDO: " %></t>
+            <br>
+            <p><%= res.contenido %></p>
+          </div>
+          <div class="reseñas-footer">
+            <% if res.user_id == current_user.id %>
+              <a href="<%= edit_resena_path(res.id) %>" class="reseñas-button reseñas-button-yellow">EDITAR RESEÑA</a>
+              <%= button_to "ELIMINAR RESEÑA", resena_path(res.id), method: :delete, class: "reseñas-button reseñas-button-red" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</body>
+</html>

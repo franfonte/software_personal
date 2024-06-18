@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reseñas de Actividad</title>
+  <link rel="stylesheet" href="admin_reseñas.css"> <!-- Estilos específicos para reseñas -->
+</head>
+<div class="admin-reseñas-titulo">RESEÑAS DE ACTIVIDADES</div>
+<body class="admin-reseñas-body">
+  <div class="admin-reseñas-grid">
+    <% Resena.all.each do |res| %>
+      <div class="admin-reseñas-card">
+      <h2 class="admin-reseñas-activity-name"><%=Actividad.find(res.actividad_id).titulo%></h2>
+        <div class="admin-reseñas-details">
+          <div class="admin-reseñas-detail">
+            <span class="admin-reseñas-detail-label">CALIFICACIÓN:</span>
+            <p class="admin-reseñas-detail-value"><%= res.calificacion %></p>
+          </div>
+          <div class="admin-reseñas-detail">
+            <span class="admin-reseñas-detail-label">CREADA POR:</span>
+            <p class="admin-reseñas-detail-value"><%= User.find(res.user_id).name %></p>
+          </div>
+          <div class="admin-reseñas-detail">
+            <span class="admin-reseñas-detail-label">FECHA CREACIÓN:</span>
+            <p class="admin-reseñas-detail-value"><%= res.fecha.strftime("%d/%m/%Y") %></p>
+          </div>
+        </div>
+        <div class="admin-reseñas-contenido">
+          <span><%= "CONTENIDO: " %></span>
+          <br>
+          <p><%= res.contenido %></p>
+        </div>
+        <div class="admin-reseñas-footer">
+          <%= button_to "ELIMINAR RESEÑA", eliminar_path(res.id), method: :delete, class: "admin-reseñas-button reseñas-button-red" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>
+

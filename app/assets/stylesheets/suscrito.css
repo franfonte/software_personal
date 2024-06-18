@@ -1,0 +1,101 @@
+.suscritas-body {
+    font-family: "Francois One", sans-serif;
+    background-color: #4d774e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    overflow-y: scroll;
+  }
+  
+  .suscritas-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-family: "Francois One", sans-serif;
+
+  }
+  
+  .suscritas-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .suscritas-header, .suscritas-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+  }
+  
+  .suscritas-header {
+    font-weight: bold;
+    background-color: #164a41;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    display: flex;
+    align-items: center; /* Asegura el centrado vertical */
+  }
+  
+  .suscritas-header .suscritas-column {
+    flex: 1;
+    padding: 10px;
+    text-align: center; /* Centra el texto horizontalmente */
+    border-right: 1px solid #ddd;
+  }
+  
+  .suscritas-item {
+    border-left: 4px solid #164a41;
+    display: flex;
+    align-items: center; /* Asegura el centrado vertical */
+    transition: background-color 0.3s; /* Transición para el cambio de color de fondo */
+  }
+  
+  .suscritas-item:hover {
+    background-color: #f0f0f0; /* Cambia el color de fondo al hacer hover */
+  }
+  
+  .suscritas-item .suscritas-column {
+    flex: 1 1 100%; /* Ocupa todo el ancho y permite el salto de línea */
+    padding: 10px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .suscritas-item .suscritas-column:nth-child(4) {
+    flex: 1 1 100%; /* Ajusta el ancho para que ocupe todo el espacio */
+  }
+  
+  .suscritas-item .suscritas-column .fecha {
+    font-weight: bold;
+  }
+  
+  .suscritas-item .suscritas-column .hora {
+    font-weight: bold;
+  }
+  
+  .suscritas-item .suscritas-column .suscritas-link {
+    text-decoration: none;
+    color: #4d774e;
+    font-family: "Francois One", sans-serif;
+    font-size: 1rem;
+  }
+  
+  .suscritas-item .suscritas-column .suscritas-link:hover {
+    text-decoration: underline; /* Subraya el texto al pasar el mouse por encima */
+  }
+  
+  

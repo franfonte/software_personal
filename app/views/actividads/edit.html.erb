@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit User</title>
+  <link rel="stylesheet" href="edit_actividad.css">
+</head>
+<body_edit>
+
+<div class="edit-container">
+  <h3 style="font-size: 3rem; font-weight: 2000; color: #4d774e">EDITAR ACTIVIDAD </h3>
+
+  <%= form_with model: @actividad do |form| %>
+    <% if @actividad.errors.any? %>
+      <% @actividad.errors.full_messages.each do |error|%>
+        <li><h4><%= error %> </h4></li>
+      <%end%>
+    <%end%>
+
+    <div class="field">
+      <%= form.label :titulo, "TÍTULO", class: "edit-label" %>
+      <%= form.text_field :titulo, class: "edit-input" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :descripcion, "DESCRIPCIÓN", class: "edit-label" %>
+      <%= form.text_field :descripcion, class: "edit-input" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :fecha, "FECHA", class: "edit-label" %>
+      <%= form.text_field :fecha, class: "edit-input" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :valor, "VALOR", class: "edit-label" %>
+      <%= form.text_field :valor, class: "edit-input" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Editar Actividad", class: "edit-button" %>
+    </div>
+  <% end %>
+
+</body_edit>
+</html>

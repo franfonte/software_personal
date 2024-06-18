@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil</title>
+  <link rel="stylesheet" href="my_profile.css">
+</head>
+<body_profile>
+
+<div class="profile-container">
+  <div class="profile-section">
+    <div class="profile-info">
+      <div class="profile-image">
+        <% if current_user.image.attached? %>
+          <%= image_tag(current_user.image, class: "team-image") %>
+        <% else %>
+          <%= image_tag("imagen_default.jpg", class: "team-image") %>
+        <% end %>
+      </div>
+      <h3 style="font-size: 3rem; font-weight: bold; color: #fff;">MI PERFIL: <%= current_user.name.capitalize %></h3>
+    </div>
+  </div>
+
+  <div class="profile-section">
+    <div class="personal-info">
+      <h4>INFORMACIÓN PERSONAL</h4>
+      <p>MAIL: <%= current_user.email %></p>
+      <p>NÚMERO TELEFONO: <%= current_user.phone %></p>
+      <p>DESCRIPCIÓN: <%= current_user.descripcion %></p>
+      <p>CREADO EN: <%= current_user.created_at.strftime("%d/%m/%y") %></p>
+    </div>
+  </div>
+
+  <div class="profile-section">
+    <div class="activity-info">
+      <h4>PARTICIPACIÓN EN ACTIVIDADES</h4>
+      <p>CANTIDAD ACTIVIDADES CREADAS: <%= Actividad.where(user_id: current_user.id).count %></p>
+      <p>CANTIDAD ACTIVIDADES SUSCRITO: <%= Solicitud.where(user_id: current_user.id, estado: true).count %></p>
+    </div>
+  </div>
+
+  <div class="scroll-message">
+    <p>Desliza horizontalmente para saber más</p>
+  </div>
+
+</div>
+
+</body_profile>
+</html>

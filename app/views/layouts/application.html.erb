@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ProyectoG9</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <!-- Vinculación de fuentes desde Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&family=Francois+One&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Vinculación de estilos CSS generales -->
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!-- Permite incluir contenido específico para la sección head -->
+  <%= yield :head %>
+
+  <!-- Importación de etiquetas de JavaScript según el importmap -->
+  <%= javascript_importmap_tags %>
+</head>
+
+<body>
+  <% if user_signed_in? %>
+    <%= render 'layouts/navbar' %>
+  <% end %>
+
+  <div class="flash-messages">
+    <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+    
+    <% if flash[:alert] %>
+      <p class="alert"><%= flash[:alert] %></p>
+    <% end %>
+  </div>
+
+  <%= yield %>
+
+  <!-- Estilos específicos adicionales -->
+  <style>
+    .flash-messages {
+      position: fixed;
+      top: 60px; /* Ajusta la posición superior */
+      left: 10px; /* Posición en la esquina superior izquierda */
+      z-index: 1000; /* Asegúrate de que se muestre por encima de otros elementos */
+      width: auto;
+      max-width: 300px; /* Set the maximum width */
+      word-wrap: break-word; /* Enable word wrapping */
+      text-align: left;
+    }
+
+    .flash-messages p {
+      color: #164a41; /* Color del texto */
+      padding: 10px;
+      margin: 10px 0;
+      background: none; /* Sin fondo */
+      border: none; /* Sin borde */
+      font-size: 20px
+    }
+
+    <% if current_user %>
+      .msg-<%= current_user.id %> {
+        background-color: #9DC88D !important;
+        padding: 10px;
+      }
+
+      .cont-<%= current_user.id %> {
+        display: flex;
+        justify-content: flex-end;
+      }
+    <% end %>
+  </style>
+
+
+</body>
+</html>

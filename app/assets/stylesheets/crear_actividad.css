@@ -1,0 +1,95 @@
+/* styles.css */
+
+.body_crear_actividad {
+    font-family: "Francois One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    background-color: #4d774e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container_crear_actividad {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+  }
+  
+  .container_crear_actividad h3 {
+    font-size: 3rem;
+    font-weight: 2000;
+    color: #4d774e;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form > div {
+    margin-bottom: 15px;
+  }
+  
+  form label {
+    font-weight: bold;
+  }
+  
+  form input[type="text"],
+  form input[type="date"],
+  form input[type="number"],
+  form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  form select {
+    padding: 8px;
+  }
+  
+  form .actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  form .actions input[type="submit"] {
+    background-color: #f1b24a;
+    color: white;
+    border: none;
+    padding: 10px 70px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: "Francois One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+  }
+  
+  form .actions input[type="submit"]:hover {
+    background-color: #f6ab33;
+  }
+  
+  .error-messages {
+    color: #ff0000;
+    margin-top: 10px;
+  }
+  
+  .error-messages li {
+    list-style-type: none;
+    margin-bottom: 5px;
+  }
+  

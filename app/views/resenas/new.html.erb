@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Reseña</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Enlaza tu archivo CSS principal -->
+  <style>
+    /* Estilos adicionales específicos del formulario de creación de reseñas */
+    body {
+      font-family: "Francois One", sans-serif;
+      background-color: #4d774e;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow-y: scroll;
+    }
+
+    .review-container {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h1 {
+      color: #4d774e;
+      font-family: "Francois One", sans-serif;
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      color: black;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="submit"] {
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: "Francois One", sans-serif;
+    }
+
+    input[type="submit"] {
+      background-color: #f1b24a;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 1rem
+    }
+
+    input[type="submit"]:hover {
+      background-color: #d99b3a;
+    }
+
+    .error-messages {
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .error-messages h4 {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="review-container">
+    <h1>¡CREA UNA RESEÑA!</h1>
+
+    <%= form_with model: @resena do |form| %>
+      <% if @resena.errors.any? %>
+        <div class="error-messages">
+          <% @resena.errors.full_messages.each do |error| %>
+            <li><h4><%= error %></h4></li>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div>
+        <%= form.label :contenido, "CONTENIDO" %>
+        <%= form.text_field :contenido %>
+      </div>
+
+      <div>
+        <%= form.label :calificacion, "CALIFICACIÓN" %>
+        <%= form.number_field :calificacion, in: 1..5, step: 1, value: 5 %>
+      </div>
+
+      <%= form.hidden_field :user_id, value: current_user.id %>
+      <%= form.hidden_field :fecha, value: DateTime.now %>
+      <%= form.hidden_field :actividad_id, value: @actividad_id %>
+
+      <%= form.submit "CREAR RESEÑA" %>
+    <% end %>
+  </div>
+</body>
+</html>

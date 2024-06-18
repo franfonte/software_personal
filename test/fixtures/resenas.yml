@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  actividad: one
+  fecha: <%= DateTime.now %>
+  contenido: MyText
+  calificacion: 1
+
+two:
+  user: two
+  actividad: two
+  fecha: <%= DateTime.now %>
+  contenido: MyText
+  calificacion: 4
+

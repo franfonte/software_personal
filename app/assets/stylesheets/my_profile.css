@@ -1,0 +1,86 @@
+/* my_profile.css */
+
+body_profile {
+    color: #f1b24a; /* Dark text color */
+    font-family: "Francois One", sans-serif;
+    font-weight: 1000;
+    font-style: normal;
+    font-size: 2rem;
+    background-color: #4d774e;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Alto completo de la ventana */
+  }
+  
+  .profile-container {
+    background-color: #4d774e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Ancho del contenedor */
+    overflow-x: auto; /* Permitir desplazamiento horizontal */
+    white-space: nowrap; /* Evita el salto de línea */
+    text-align: left; /* Alineación del texto */
+  }
+  
+  .profile-section {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    min-width: 300px; /* Ancho mínimo de cada sección */
+    text-align: center; /* Centra el contenido horizontalmente */
+    padding: 10px; /* Espaciado interno */
+  }
+  
+  .profile-info {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .profile-image {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    overflow: hidden; 
+    margin-bottom: 10px; /* Espacio inferior para separar del resto de la información */
+  }
+  
+  .profile-image img {
+    width: auto;
+    height: 100%; /* Mantiene la proporción de la imagen */
+  }
+  
+  .personal-info, .activity-info {
+    padding: 20px 20px;
+  }
+  
+  .personal-info h4, .activity-info h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .personal-info p, .activity-info p {
+    color: #fff; /* Dark text color */
+    font-family: "Francois One", sans-serif;
+    font-weight: 1000;
+    font-style: normal;
+    font-size: 1.2rem;
+  }
+
+  .scroll-message {
+    position: absolute;
+    bottom: 20px; /* Ajusta la distancia desde abajo */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+  }
+  
+  .scroll-message p {
+    font-size: 1.2rem;
+    color: #164a41;
+  }

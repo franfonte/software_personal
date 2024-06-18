@@ -1,0 +1,11 @@
+development:
+  adapter: redis
+  url: redis://localhost:6379/1
+
+test:
+  adapter: test
+
+production:
+  adapter: redis
+  url: redis://red-cp736uuv3ddc73ft8h8g:6379 # Este archivo cable.yml junto a render.yaml
+  channel_prefix: Proyecto_G9_production     # se conectaron al redis online

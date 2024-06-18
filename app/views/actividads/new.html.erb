@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Actividad</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="body_crear_actividad">
+
+<div class="container container_crear_actividad">
+  <h3 style= "text-align:center;">¡CREA UNA ACTIVIDAD!</h3>
+
+  <%= form_with model: @actividad do |form|%>
+
+  <% if @actividad.errors.any? %>
+    <div class="error-messages">
+      <ul>
+        <% @actividad.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :titulo, "TÍTULO" %>
+    <%= form.text_field :titulo %>
+  </div>
+
+  <div>
+    <%= form.label :descripcion, "DESCRIPCIÓN" %>
+    <%= form.text_field :descripcion %>
+  </div>
+
+  <div>
+    <%= form.label :fecha, "FECHA" %>
+    <%= form.date_field :fecha %>
+  </div>
+
+  <div>
+    <%= form.label :valor, "VALOR ($)" %>
+    <%= form.number_field :valor, in: 0..100000, step: 5000, value: 0 %>
+  </div>
+
+  <div>
+    <%= form.label :tipo_de_actividad, "TIPO DE ACTIVIDAD" %>
+    <%= form.select :publica, [['Publica', true], ['Privada', false]] %>
+  </div>
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <div class="actions">
+    <%= form.submit "CREAR" %>
+  </div>
+
+  <% end %>
+</div>
+
+</body>
+</html>

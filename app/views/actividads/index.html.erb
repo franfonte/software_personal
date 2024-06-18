@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorar Actividades</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Enlaza tu archivo CSS -->
+  <style>
+    .explorar-submit-button {
+      padding: 5px 10px;
+      background-color: #f1b24a; /* Color amarillo */
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1rem;
+      font-family: "Francois One", sans-serif; /* Fuente */;
+      border-radius: 5px;
+    }
+
+    .explorar-submit-button:hover {
+      background-color: #f1b24a;
+      opacity: 0.8;
+    }
+  </style>
+
+</head>
+
+<body class="explorar-body">
+  <h1 class="explorar-heading" style="margin-top: 70px;">EXPLORAR ACTIVIDADES</h1>
+  
+  <div class="explorar-activity-container">
+    <div class="explorar-activity-grid">
+      <% Actividad.all.reverse().each do |act| %>
+        <% if act.user_id != current_user.id %>
+          <div class="explorar-activity-card">
+            <div class="explorar-activity-header">
+              <h2 class="explorar-activity-title"><%= act.titulo.upcase %></h2>
+            </div>
+
+            <div class="explorar-activity-details">
+              <div class="explorar-activity-detail">
+                <p class="explorar-detail-label">VALOR:</p>
+                <p class="explorar-detail-value"><%= act.valor %></p>
+              </div>
+              <div class="explorar-activity-detail">
+                <p class="explorar-detail-label">CALIFICACIÓN:</p>
+                <p class="explorar-detail-value"><%= Resena.where(actividad_id: act.id).average(:calificacion).to_f.round(1) %></p>
+              </div>
+              <div class="explorar-activity-detail">
+                <p class="explorar-detail-label">FECHA:</p>
+                <p class="explorar-detail-value"><%= act.fecha.strftime("%d/%m/%y") %></p>
+              </div>
+            </div>
+            
+            <div class="explorar-activity-image-container">
+              <img src="https://picsum.photos/seed/<%= ERB::Util.url_encode(act.titulo) %>/100" alt="<%= act.titulo %>" class="explorar-activity-image">
+            </div>
+            <div class="explorar-activity-attributes">
+              <div class="explorar-activity-attribute">
+                <p class="explorar-attribute-label">DESCRIPCIÓN:</p>
+                <p class="explorar-attribute-value"><%= act.descripcion %></p>
+              </div>
+              <div class="explorar-activity-attribute">
+                <p class="explorar-attribute-label">INSCRITOS:</p>
+                <p class="explorar-attribute-value"><%= (Solicitud.where(actividad_id: act.id, estado: true).count + 1) %></p>
+              </div>
+              <div class="explorar-activity-attribute">
+                <p class="explorar-attribute-label">CREADA POR:</p>
+                <p class="explorar-attribute-value"><%= User.find(act.user_id).name %></p>
+              </div>
+              <div class="explorar-activity-attribute">
+                <p class="explorar-attribute-label">PRIVACIDAD:</p>
+                <p class="explorar-attribute-value"><%= act.publica ? 'Pública' : 'Privada' %></p>
+              </div>
+            </div>
+
+            <div class="explorar-activity-form">
+              <% if Solicitud.where(user_id: current_user.id, actividad_id: act.id).count == 0 %>
+                <%= form_with model: Solicitud.new do |form| %>
+                  <div class="explorar-form-row">
+                    <%= form.hidden_field :user_id, value: current_user.id %>
+                    <%= form.hidden_field :actividad_id, value: act.id %>
+                    <%= form.hidden_field :estado, value: act.publica %>
+                    <div class="explorar-form-column">
+                      <%= form.text_field :descripcion, placeholder: "¿Por qué te interesa?" %>
+                    </div>
+                    <div class="explorar-form-column">
+                      <%= form.submit "CREAR SOLICITUD", class: "explorar-submit-button" %>
+                    </div>
+                  </div>
+                <% end %>
+              <% else %>
+                <div class="explorar-form-column">
+                  <%="Ya fue solicitada" %>
+                </div>
+              <% end %>
+            </div>
+
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</body>
+</html>

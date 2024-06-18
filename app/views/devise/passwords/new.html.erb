@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot your password?</title>
+  <link rel="stylesheet" href="olvido_contraseña.css">
+</head>
+<body class="forgot-password-body">
+
+  <div class="forgot-password-content">
+    <h2>¿OLVIDASTE TU CONTRASEÑA?</h2>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="form-field">
+        <%= f.label :email, "INGRESA TU MAIL PARA RECUPERARLA" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input" %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit "INSTRUCCIONES PARA REESTABLECER LA CONTRASEÑA", class: "form-submit-button" %>
+      </div>
+
+      <div class="forgot-password-links">
+        <%= render "devise/shared/links" %>
+      </div>
+    <% end %>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+/* Estilos generales */
+.explorar-body {
+    font-family: "Francois One", sans-serif;
+    background-color: #4d774e;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll; /* Agrega scroll vertical al body */
+}
+
+.explorar-body h1{
+    font-family: "Francois One", sans-serif;
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+
+}
+
+.explorar-activity-container {
+    max-width: 100%;
+    margin: 20px auto; /* Margen ajustado */
+    padding: 20px;
+}
+
+.explorar-activity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.explorar-activity-grid p{
+    font-family: "Francois One", sans-serif;
+    color: black;
+    font-size: 1rem;
+}
+
+.explorar-activity-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.explorar-activity-header,
+.explorar-activity-footer {
+    background-color: #164a41;
+    color: #fff;
+    padding: 10px 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-top: 20px; /* Aumenta la separación entre el header/footer y los detalles */
+    text-align: center; /* Centra el contenido del header y footer */
+}
+
+.explorar-activity-header h2,
+.explorar-activity-footer p {
+    margin: 0;
+    text-align: center;
+}
+
+.explorar-activity-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.explorar-activity-detail {
+    background-color: #cddcd0;
+    padding: 10px;
+    border-radius: 8px;
+    flex: 1; /* Ajusta los tres primeros cuadros al ancho del contenedor */
+    margin-right: 10px; /* Espacio entre los detalles */
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    white-space: nowrap; /* Evita el salto de línea */
+}
+
+.explorar-detail-label {
+    font-weight: bold;
+    margin: 0;
+}
+
+.explorar-detail-value {
+    margin: 0;
+}
+
+.explorar-activity-image-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.explorar-activity-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.explorar-activity-attributes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.explorar-activity-attribute {
+    background-color: #cddcd0;
+    padding: 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    overflow-x: auto;
+    text-overflow: ellipsis;
+}
+
+.explorar-attribute-label {
+    font-weight: bold;
+    margin: 0;
+}
+
+.explorar-attribute-value {
+    margin: 0;
+}
+
+.explorar-activity-form {
+    margin-top: 20px; /* Aumenta la separación entre los atributos y el formulario */
+    border-radius: 8px;
+    background-color: #164a41;
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    text-align: center;
+    height: 100px; /* Establece la altura del footer */
+}
+
+.explorar-form-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.explorar-form-column {
+    margin-bottom: 10px;
+}
+
+.explorar-activity-solicitar input[type="text"] {
+    padding: 5px;
+    width: 100%;
+    max-width: 200px;
+}
+
+.explorar-activity-solicitar input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #f1b24a;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.explorar-activity-solicitar input[type="submit"]:hover {
+    background-color: #f1b24a;
+    opacity: 0.8;
+}

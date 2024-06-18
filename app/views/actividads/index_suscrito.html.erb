@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividades Suscritas</title>
+  <link rel="stylesheet" href="suscrito.css"> <!-- Asegúrate de ajustar el nombre del archivo CSS -->
+</head>
+<body class="suscritas-body">
+  <h1 class="suscritas-heading">ACTIVIDADES A LAS QUE ESTOY SUSCRITO</h1>
+  <div class="suscritas-container">
+    <div class="suscritas-header">
+      <div class="suscritas-column">TÍTULO</div>
+      <div class="suscritas-column">VALOR ($)</div>
+      <div class="suscritas-column">DESCRIPCIÓN</div>
+      <div class="suscritas-column">FECHA</div>
+      <div class="suscritas-column">CANTIDAD PERSONAS</div>
+      <div class="suscritas-column">CREADA POR</div>
+      <div class="suscritas-column">PRIVACIDAD</div>
+      <div class="suscritas-column">CALIFICACIÓN</div>
+      <div class="suscritas-column">CHAT</div>
+      <div class="suscritas-column">RESEÑAS</div>
+      <div class="suscritas-column">CREAR RESEÑA</div>
+    </div>
+    <% Solicitud.all.each do |solicitud| %>
+      <% if solicitud.user_id == current_user.id && solicitud.estado %>
+        <% act = Actividad.find(solicitud.actividad_id) %>
+        <div class="suscritas-item">
+          <div class="suscritas-column"><%= act.titulo %></div>
+          <div class="suscritas-column"><%= act.valor %></div>
+          <div class="suscritas-column"><%= act.descripcion %></div>
+          <div class="suscritas-column">
+            <span class="fecha">FECHA:</span><br>
+            <%= act.fecha.strftime('%d-%m-%Y') %><br>
+            <br>
+            <span class="hora">HORA:</span><br>
+            <%= act.fecha.strftime('%H:%M:%S') %>
+          </div>
+          <div class="suscritas-column"><%= (Solicitud.where(actividad_id: act.id, estado: true).count + 1) %></div>
+          <div class="suscritas-column"><%= User.find(act.user_id).name %></div>
+          <div class="suscritas-column"><%= act.publica ? "Pública" : "Privada" %></div>
+          <div class="suscritas-column"><%= Resena.where(actividad_id: act.id).average(:calificacion).to_f.round(1) %></div>
+          <% @room = Room.find_by(actividad_id: act.id) %>
+          <div class="suscritas-column">
+            <% if @room %>
+              <%= link_to "CHAT", room_path(@room.id), class: "suscritas-link" %>
+            <% else %>
+              (no tiene)
+            <% end %>
+          </div>
+          <div class="suscritas-column"><%= link_to "RESEÑAS", index_resena_id_act_path(act.id), class: "suscritas-link" %></div>
+          <% if Resena.where(user_id: current_user.id, actividad_id: act.id).count < 1 %>
+            <div class="suscritas-column"><%= link_to "CREAR", new_resena_id_act_path(act.id), class: "suscritas-link" %></div>
+          <% else %>
+            <div class="suscritas-column">Ya fue creada</div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</body>
+</html>

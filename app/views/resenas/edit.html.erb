@@ -1,0 +1,24 @@
+<h1>edit: Editar Reseña</h1>
+
+<%= form_with model: @resena do |form|%>
+
+<% if @resena.errors.any? %>
+  <% @resena.errors.full_messages.each do |error|%>
+     <li><h4><%= error %> </h4></li>
+  <%end%>
+<%end%>
+
+<div>
+<%= form.label :contenido %>
+<%= form.text_field :contenido  %>
+<div>
+
+<div>
+<%= form.label :calificacion %>
+<%= form.number_field :calificacion, in: 1..5, step: 1%>
+<div>
+
+<%= form.hidden_field :fecha, value: DateTime.now%>
+<%= form.submit "Editar Reseña"%>
+
+<%end%>

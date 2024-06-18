@@ -1,0 +1,166 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* Custom CSS for additional styling */
+body {
+    padding-top: 25px;
+    background-color: #4d774e; /* Light gray background color */
+    font-family: 'Bebas Neue', sans-serif;
+    overflow-y: scroll;
+  }
+  
+ h1 {
+    color: #ffffff; /* Dark text color */
+    font-family: "Spicy Rice", sans-serif;
+    font-weight: 1000;
+    font-style: normal;
+  }
+
+  p {
+    color: #ffffff; /* Dark text color */
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 25px;
+  }
+
+  h3 {
+    color: #00000000; /* Dark text color */
+    font-family: "Francois One", sans-serif;
+    font-weight: 1000;
+    font-style: normal;
+  }
+  
+  
+
+/* Toda esta sección define el estilo de la NavBar */
+
+.navbar {
+  position: fixed;
+  top: 0; /* Asegura que esté en la parte superior */
+  width: 100%; /* Ocupa el ancho completo */
+  background-color: #164a41; /* Color de fondo de la barra de navegación */
+  color: #fff; /* Color de texto */
+  font-family: "Francois One", sans-serif; /* Familia de fuente */
+  font-weight: 400; /* Peso de la fuente */
+  font-style: normal; /* Estilo de la fuente */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.navbar-nav {
+  display: inline-block;
+  list-style-type: none; /* Elimina los estilos de lista */
+  margin: 0;
+  padding: 0;
+  text-align: center; /* Centra los elementos en la barra de navegación */
+}
+
+.navbar-nav li {
+  display: inline-block; /* Alinea los elementos en línea */
+  margin-right: 20px; /* Espacio entre elementos de la lista */
+  white-space: nowrap;
+}
+
+/* Style for the dropdown menu */
+.dropdown {
+  position: relative; /* Ensure it's positioned relative for absolute positioning of submenu */
+}
+
+/* Style for the submenu */
+.submenu {
+  display: none; /* Hide submenu by default */
+  position: relative;
+}
+
+/* Show the submenu when hovering over the parent li */
+.dropdown:hover .submenu {
+  display: inline-block;
+}
+
+
+
+.navbar-nav li:last-child {
+  margin-right: 0; /* Elimina el margen derecho del último elemento */
+}
+
+.navbar-nav a {
+  color: #fff; /* Color del texto de los enlaces */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  padding: 15px 25px; /* Espacio interno de los enlaces */
+  display: inline-block; /* Alineación en línea de los enlaces */
+  font-family: "Francois One", sans-serif; /* Familia de fuente de los enlaces */
+  font-weight: 400; /* Peso de la fuente de los enlaces */
+  font-style: normal; /* Estilo de la fuente de los enlaces */
+}
+
+.navbar-nav a:hover {
+  color: #f1b24a; /* Cambia el color del texto al pasar el cursor por encima */
+  text-decoration: none; /* Asegura que no haya subrayado */
+}
+
+.nav-image {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  align-items: center;
+}
+
+/* Toda esta sección define el estilo de la NavBar */
+
+  .l_text {
+    width: 40px;
+    max-width: 10%;
+    overflow-wrap: break-word;  /* Ensures long words break to the next line */
+    word-wrap: break-word;     /* Compatibility with older browsers */
+    word-break: break-word;    /* Ensures words break at boundaries */
+    white-space: pre-wrap;     /* Preserves white space and wraps text */
+  }
+
+
+  /* Nuevas letras */
+  /* Tipografía L1: Spicy Rice */
+  .spicy-rice-regular {
+    font-family: "Spicy Rice", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* Tipografía L2: Francois One */
+  .francois-one-regular {
+    font-family: "Francois One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* Tipografía L3: Oswald Bold */
+  .oswald-bold {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  /* Tipografía L4: Oswald Regular */
+  .oswald-regular {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  

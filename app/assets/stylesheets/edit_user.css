@@ -1,0 +1,114 @@
+/* edit.css */
+
+body_edit {
+    font-family: "Francois One", sans-serif;
+    background-color: #4d774e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+  }
+  
+  .edit-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    overflow-y: auto;
+    max-height: 80vh;
+    text-align: center;
+    margin-top: auto; /* Alinea el contenedor blanco en el centro vertical */
+    margin-bottom: auto; /* Alinea el contenedor blanco en el centro vertical */
+  }
+  
+  .edit-container h2 {
+    margin-bottom: 1rem;
+    color: #4d774e;
+  }
+  
+  .field {
+    margin-bottom: 1.5rem; /* Espacio consistente entre los campos */
+  }
+  
+  .edit-input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .edit-checkbox {
+    margin-right: 0.5rem;
+  }
+  
+  .edit-label {
+    margin-bottom: 0.5rem; /* Espacio consistente debajo de las etiquetas */
+    display: block; /* Asegurar que las etiquetas estén en una línea separada */
+  }
+  
+  .actions {
+    margin-top: 1rem;
+  }
+  
+  .edit-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #f1b24a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Francois One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+  }
+  
+  .edit-button:hover {
+    background-color: #d19d3a;
+  }
+  
+  .cancel-account {
+    margin-top: 2rem;
+  }
+  
+  .cancel-account button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    font-family: "Francois One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+  }
+  
+  .cancel-account button:hover {
+    background-color: #c0392b;
+  }
+  
+  .back-link {
+    margin-top: 5rem;
+    display: block;
+    color: #4d774e;
+    text-decoration: none;
+
+    font-family: "Francois One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+  }
+  
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  

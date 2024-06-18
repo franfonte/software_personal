@@ -1,0 +1,135 @@
+/* Estilos específicos para reseñas */
+
+/* Tarjeta individual de cada reseña */
+.reseñas-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ancho completo */
+    max-width: 600px; /* Ancho máximo de la tarjeta */
+    max-height: 250px;
+    height: auto; /* Altura automática */
+    margin: 10px; /* Espacio entre tarjetas */
+    overflow-x: auto; /* Desplazamiento horizontal si es necesario */
+    overflow-y: auto; /* Desplazamiento vertical si es necesario */
+  }
+  
+  /* Detalles de cada reseña */
+  .reseñas-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  /* Cada detalle individual */
+  .reseñas-detail {
+    background-color: #cddcd0;
+    padding: 10px;
+    border-radius: 8px;
+    flex: 1;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  /* Contenido de la reseña */
+  .reseñas-contenido {
+    background-color: #cddcd0;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    overflow-x: auto;
+  }
+  
+  /* Footer de cada reseña */
+  .reseñas-footer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    height: 100px; /* Altura fija del footer */
+    align-items: center;
+  }
+  
+  /* Estilo general para los botones */
+  .reseñas-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "Francois One", sans-serif;
+    font-size: 1rem;
+  }
+  
+  /* Botón de color amarillo */
+  .reseñas-button-yellow {
+    background-color: #f1b24a;
+    color: #fff;
+  }
+  
+  /* Hover para el botón amarillo */
+  .reseñas-button-yellow:hover {
+    background-color: #d99b3a;
+  }
+  
+  /* Botón de color rojo */
+  .reseñas-button-red {
+    background-color: #cc0000;
+    color: #fff;
+  }
+  
+  /* Hover para el botón rojo */
+  .reseñas-button-red:hover {
+    background-color: #ff4d4d;
+  }
+  
+  /* Estilos generales */
+  
+  /* Estilo general del cuerpo */
+  .reseñas-body {
+    font-family: "Francois One", sans-serif;
+    background-color: #4d774e;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll; /* Agrega scroll vertical al body si es necesario */
+  }
+  
+  /* Estilo para los párrafos dentro de las reseñas */
+  .reseñas-body p {
+    font-family: "Francois One", sans-serif;
+    font-size: 1rem;
+    color: black; /* Ajustar el color de la fuente según sea necesario */
+  }
+
+  .reseñas-body t {
+    font-family: "Francois One", sans-serif;
+    font-size: 1.2rem;
+    color: black; /* Ajustar el color de la fuente según sea necesario */
+  }
+
+  .reseñas-body r {
+    margin-top: 70px;
+    font-family: "Francois One", sans-serif;
+    font-size: 3rem;
+    color: white; /* Ajustar el color de la fuente según sea necesario */
+  }
+  
+  /* Encabezado de las reseñas */
+  .reseñas-heading {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Rejilla para organizar las reseñas */
+  .reseñas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas por fila */
+    gap: 60px; /* Espacio entre tarjetas */
+  }
+  

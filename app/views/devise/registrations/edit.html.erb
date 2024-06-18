@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit User</title>
+  <link rel="stylesheet" href="edit_user.css">
+</head>
+<body_edit>
+
+<div class="edit-container">
+  <h3 style="font-size: 3rem; font-weight: 2000; color: #4d774e">EDITA TU USUARIO </h3>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :email, "MAIL", class: "edit-label" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "edit-input" %>
+    </div>
+  
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="field">
+      <br />
+      <%= f.label :password, "NUEVA CONTRASEÑA", class: "edit-label" %> <i>(dejar el espacio en blanco si no desea cambiarla)</i>
+      <%= f.password_field :password, autocomplete: "new-password", class: "edit-input" %>
+      <% if @minimum_password_length %>
+        <br />
+        <em><%= @minimum_password_length %> carácteres como mínimo</em><br />
+      <% end %>
+    </div>
+
+    <div class="field">
+      <br />
+      <%= f.label :password_confirmation, "CONFIRMAR NUEVA CONTRASEÑA", class: "edit-label" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "edit-input" %>
+    </div>
+
+
+    <div class="field">
+      <br />
+      <%= f.label :name, "NOMBRE", class: "edit-label" %>
+      <%= f.text_field :name, class: "edit-input" %>
+    </div>
+
+
+    <div class="field">
+      <br />
+      <%= f.label :descripcion, "DESCRIPCIÓN", class: "edit-label" %>
+      <%= f.text_field :descripcion, class: "edit-input" %>
+    </div>
+
+
+    <div class="field">
+      <br />
+      <%= f.label :phone, "NÚMERO", class: "edit-label" %>
+      <%= f.text_field :phone, class: "edit-input" %>
+    </div>
+
+
+    <div class="field">
+      <br />
+      <%= f.label :image, "IMÁGEN", class: "edit-label" %>
+      <%= f.file_field :image, class: "edit-input" %>
+    </div>
+
+
+    <div class="field">
+      <br />
+      <%= f.label :current_password, "CONTRASEÑA ACTUAL", class: "edit-label" %> <i>(Se necesita la contraseña actual para confirmar los cambios)</i><br />
+      <%= f.password_field :current_password, autocomplete: "current-password", class: "edit-input" %>
+    </div>
+
+
+    <div class="actions">
+      <br />
+      <%= f.submit "GUARDAR CAMBIOS", class: "edit-button" %>
+    </div>
+  <% end %>
+  <br>
+  <br>
+
+  <h3 style="font-size: 3rem; font-weight: 800; color: black">CANCELAR CUENTA</h3>
+
+  <div class="cancel-account">¿Quiere eliminar su cuenta? <%= button_to "CANCELAR CUENTA", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
+
+  <%= link_to "ATRÁS", :back, class: "back-link" %>
+</div>
+
+</body_edit>
+</html>

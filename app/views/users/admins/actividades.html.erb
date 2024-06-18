@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Actividades</title>
+  <link rel="stylesheet" href="admin_actividades.css"> 
+<body class="administrador-actividades-body">
+  <h1 class="administrador-actividades-heading">ADMINISTRAR ACTIVIDADES</h1>
+  <div class="administrador-actividades-container">
+    <% Actividad.all.each do |actividad| %>
+        <div class="administrador-actividades-item">
+          <div class="administrador-actividades-header">
+            <h2><%= actividad.titulo %></h2>
+          </div>
+          <h3>INFORMACIÓN ACTIVIDAD</h3>
+          <div class="administrador-actividades-info">
+            <br>
+            <div><span class="administrador-actividades-label">VALOR ($):</span><br><p><%= actividad.valor %></p></div>
+            <div><span class="administrador-actividades-label">CALIFICACIÓN:</span><br><p><%= Resena.where(actividad_id: actividad.id).average(:calificacion).to_f %></p></div>
+            <div><span class="administrador-actividades-label">DESCRIPCIÓN:</span><br><p><%= actividad.descripcion %></p></div>
+            <div><span class="administrador-actividades-label">FECHA:</span><br><p><%= actividad.fecha.strftime("%d/%m/%y") %></p></div>
+            <div><span class="administrador-actividades-label">PARTICIPANTES:</span><br><p><%= Solicitud.where(actividad_id: actividad.id, estado: true).count %></p></div>
+            <div><span class="administrador-actividades-label">CREADA POR:</span><br><p><%= User.find(actividad.user_id).name.capitalize %></p></div>
+            <div><span class="administrador-actividades-label">PRIVACIDAD:</span><br><p><%= actividad.publica ? "Pública" : "Privada" %></p></div>
+          </div>
+          <br>
+          <h3>ACCIONES DISPONIBLES</h3>
+          <%= link_to "EDITAR ACTIVIDAD", edit_actividad_path(actividad.id), class: "administrador-actividades-link"  %>
+          <br>
+          <div><span class="administrador-actividades-label"> </p></div>
+          <div class="administrador-actividades-detail">
+          <%= button_to "Eliminar Actividad", actividad_path(actividad.id), method: :delete, class: "administrador-actividades-button" %>
+        </div>
+        </div>
+    <% end %>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+

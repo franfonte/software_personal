@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reseñas de Actividad</title>
+  <link rel="stylesheet" href="creador_reseñas.css"> <!-- Estilos específicos para reseñas -->
+</head>
+<body class="creseñas-body">
+  <h1 class="creseñas-heading">RESEÑAS DE ACTIVIDAD: <%= Actividad.find(@actividad_id).titulo %> </h1>
+  <div class="creseñas-grid">
+    <% Resena.all.each do |res| %>
+      <% if res.actividad_id == @actividad_id %>
+        <div class="creseñas-card">
+          <div class="creseñas-details">
+            <div class="creseñas-detail">
+              <span class="creseñas-detail-label">CALIFICACIÓN:</span>
+              <p class="creseñas-detail-value"><%= res.calificacion %></p>
+            </div>
+            <div class="creseñas-detail">
+              <span class="creseñas-detail-label">CREADA POR:</span>
+              <p class="creseñas-detail-value"><%= User.find(res.user_id).name %></p>
+            </div>
+            <div class="creseñas-detail">
+              <span class="creseñas-detail-label">FECHA CREACIÓN:</span>
+              <p class="creseñas-detail-value"><%= res.fecha.strftime("%d/%m/%Y") %></p>
+            </div>
+          </div>
+          <div class="creseñas-contenido">
+            <span><%= "CONTENIDO: " %></span>
+            <br>
+            <p><%= res.contenido %></p>
+          </div>
+          <div class="creseñas-footer">
+            <%= button_to "ELIMINAR RESEÑA", eliminar_path(res.id), method: :delete, class: "creseñas-button creseñas-button-red" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</body>
+</html>
